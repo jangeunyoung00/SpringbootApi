@@ -11,7 +11,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import javax.sql.DataSource;
 
-@SpringBootApplication
+@SpringBootApplication // 구현체
 @MapperScan(basePackages = "kr.ac.daegu.springbootapi")
 public class SpringbootApiApplication {
 
