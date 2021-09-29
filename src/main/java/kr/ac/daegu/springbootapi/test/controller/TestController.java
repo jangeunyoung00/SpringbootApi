@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/test") //컨트롤러 명칭 자체url 설정가능
+@RequestMapping(value = "/test")
 @RequiredArgsConstructor
 @Slf4j
 public class TestController {

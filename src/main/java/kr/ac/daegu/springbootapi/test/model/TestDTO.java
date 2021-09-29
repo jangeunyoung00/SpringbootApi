@@ -10,4 +10,5 @@ import lombok.Setter;
 public class TestDTO {
     private int num;
     private String name;
+
 }
