@@ -3,9 +3,10 @@ package kr.ac.daegu.springbootapi.board.model;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.tomcat.jni.Local;
 
-import java.sql.Date;
-import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @AllArgsConstructor
 @Getter
@@ -15,8 +16,8 @@ public class BoardDTO {
     private String author;
     private String subject;
     private String content;
-    private Date writeDate;
-    private Time writeTime;
+    private LocalDate writeDate;
+    private LocalTime writeTime;
     private int readCount;
     private int commentCount;
     private String password;
