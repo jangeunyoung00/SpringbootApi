@@ -30,4 +30,10 @@ public class BoardController {
         BoardDTO dto = boardService.postBoard(boardDTO);
         return new ApiResponse<>(true, dto);
     }
+    @PutMapping(value = "/{id}")
+    public String putBoard(@PathVariable int id,
+                           @RequestBody BoardDTO boardDTO) throws Exception {
+        log.debug("id: " + id);
+        return boardService.putBoard(id, boardDTO);
+    }
 }
