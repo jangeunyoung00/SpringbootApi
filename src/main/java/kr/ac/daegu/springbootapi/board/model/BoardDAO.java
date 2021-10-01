@@ -11,4 +11,8 @@ public interface BoardDAO {
     List<BoardDTO> getBoardList();
 
     int postBoard(BoardDTO boardDTO);
+
+    BoardDTO getBoardById(int id);
+
+    int updateIsDelBoardById(int id);
 }
