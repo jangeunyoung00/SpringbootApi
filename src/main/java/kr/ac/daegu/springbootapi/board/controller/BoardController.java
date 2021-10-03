@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@Slf4j
+@Slf4j  // 로깅에 대한 추상레이어 제공 - 로깅 라이브러리를 변경할때 코드 변경 필요없음
 @RequestMapping(value = "/board")
 public class BoardController {
 
