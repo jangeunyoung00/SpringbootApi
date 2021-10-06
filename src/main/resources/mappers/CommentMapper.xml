@@ -3,6 +3,35 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.ac.daegu.springbootapi.board.model.BoardDAO">
 
+    <select id="getCommentList" resultType="kr.ac.daegu.springbootapi.comment.model.CommentDTO">
+        SELECT * FROM Comment
+    </select>
+
+    <insert id="postComment" parameterType="kr.ac.daegu.springbootapi.comment.model.CommentDTO">
+        insert into board (cid,id,author,content,writeDate,writeTime)
+        values (#{cid}, #{id}, #{content}, #{writeDate}, #{writeTime})
+    </insert>
+
+    <update id="putComment" parameterType="kr.ac.daegu.springbootapi.Comment.model.CommentDTO">
+        UPDATE COMMENT
+        SET author=#{author},
+            content=#{content},
+            ㄴ          subject=#{subject},
+            writeDate=#{writeDate},
+            writeTime=#{writeTime}
+        WHERE id=#{id}
+    </update>
+
+    <select id="getCommentById" parameterType="int" resultType="kr.ac.daegu.springbootapi.Comment.model.CommentDTO">
+        SELECT * from Comment
+        WHERE id = #{id}
+    </select>
+
+    <update id="updateIsDelCommentById" parameterType="int">
+        UPDATE COMMENT
+        SET isDEL = 'Y'
+        WHERE id = #{id}
+    </update>
     <!--<select id="selectUsers" parameterType="me.fleuve.springboot03.dto.UserDTO"
             resultType="me.fleuve.springboot03.dto.UserDTO">&lt;!&ndash; selectUsers()메서드를 호출하면 실행할 SELECT문이며, UserDTO 객체를 파라미터로 받아, UserDTO객체를 반환합니다.&ndash;&gt;
         SELECT `seq`, `name`, `country`
