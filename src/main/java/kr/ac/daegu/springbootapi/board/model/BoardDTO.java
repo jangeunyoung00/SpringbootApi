@@ -3,7 +3,6 @@ package kr.ac.daegu.springbootapi.board.model;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.tomcat.jni.Local;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

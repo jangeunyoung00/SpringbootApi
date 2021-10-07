@@ -22,7 +22,7 @@ public class BoardService {
         return boardDAO.getBoardList();
     }
 
-    public BoardDTO postBoard(BoardDTO boardDTO) throws Exception{
+    public BoardDTO postBoard(BoardDTO boardDTO) throws Exception {
         log.debug(boardDTO.toString());
 
         // Inserted Date, Inserted Time 정의
@@ -30,13 +30,13 @@ public class BoardService {
         boardDTO.setWriteTime(LocalTime.now());
 
         int insertedRowCount = boardDAO.postBoard(boardDTO);
-        if(insertedRowCount >0){
-
+        if(insertedRowCount > 0){
             return boardDTO;
-        } else{
+        } else {
             throw new Exception("failed to insert board data");
         }
     }
+
     public String putBoard(int id, BoardDTO boardDTO) throws Exception {
         // author,
         // content,

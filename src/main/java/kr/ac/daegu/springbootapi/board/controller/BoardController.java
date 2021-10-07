@@ -11,25 +11,24 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@Slf4j  // 로깅에 대한 추상레이어 제공 - 로깅 라이브러리를 변경할때 코드 변경 필요없음
+@Slf4j
 @RequestMapping(value = "/board")
 public class BoardController {
 
     public final BoardService boardService;
 
     @GetMapping(value = "/")
-    public ApiResponse<BoardDTO> getBoardList() {
+    public ApiResponse<BoardDTO> getBoardList(){
         List<BoardDTO> list = boardService.getBoardList();
-        return new ApiResponse(true,list);
+        return new ApiResponse(true, list);
     }
-    /* mission */
-    // postman에서 GET http://localhost:8080/board/ 요청 날려서
-    // DB의 board 테이블 데이터 모두 가져와서 json return 해보기.
+
     @PostMapping(value = "/")
     public ApiResponse<BoardDTO> postBoard(@RequestBody BoardDTO boardDTO) throws Exception {
         BoardDTO dto = boardService.postBoard(boardDTO);
-        return new ApiResponse<>(true, dto);
+        return new ApiResponse(true, dto);
     }
+
     @PutMapping(value = "/{id}")
     public String putBoard(@PathVariable int id,
                            @RequestBody BoardDTO boardDTO) throws Exception {
@@ -52,4 +51,5 @@ public class BoardController {
     public ApiResponse<BoardDTO> updateIsDelBoardById(@PathVariable int id) throws Exception {
         return boardService.updateIsDelBoardById(id);
     }
+
 }
