@@ -25,6 +25,7 @@ public class BoardDTO {
     private int replyRootId;
     private int depth;
     private int orderNum;
+    private String isDel;
 
     private List<CommentDTO> comments = null;
 
@@ -44,6 +45,7 @@ public class BoardDTO {
                 ", replyRootId=" + replyRootId +
                 ", depth=" + depth +
                 ", orderNum=" + orderNum +
+                ", isDel='" + isDel + '\'' +
                 ", comments=" + comments +
                 '}';
     }
